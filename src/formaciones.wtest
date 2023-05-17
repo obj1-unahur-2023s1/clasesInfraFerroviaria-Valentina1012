@@ -1,0 +1,66 @@
+import vagones.*
+
+
+describe "Formacion1"{
+	/* VAGONES */
+	const vagon1= new VagonDePasajeros(largo=10,ancho=4,estaOrdenado=true,tieneBanios=true,cantPasajeros=100)
+	const vagon2= new VagonDePasajeros(largo=7,ancho=2,estaOrdenado=false,tieneBanios=false,cantPasajeros=41)
+	const vagon3= new VagonDeCarga(cargaMaximaIdeal=6800,cantMaderasSueltas=5)
+	const vagon4= new VagonDormitorio(cantCompartimentos=8,camasPorCompartimento=3,tieneBanios=true,cantPasajeros=24)
+	
+	/* TEST DEL VAGON1 */
+	test "La cantidad de pasajeros del vagon1 es 100"{
+		assert.equals(100,vagon1.cantPasajeros())
+	}
+	test "El peso maximo del vagon1 es 10300"{
+		assert.equals(10300,vagon1.pesoMaximo())
+	}
+	test "La carga maxima del vagon1 es 300"{
+		assert.equals(300,vagon1.cargaMaxima())
+	}
+	test "El vagon1 tiene baño"{
+		assert.that(vagon1.tieneBanios())
+	}
+	
+	/* TEST DEL VAGON2 */
+	test "La cantidad de pasajeros del vagon2 es 41"{
+		assert.equals(41,vagon2.cantPasajeros())
+	}
+	test "El peso maximo del vagon2 es de 6080"{
+		assert.equals(6080,vagon2.pesoMaximo())
+	}
+	test "La carga maxima del vagon2 es 800"{
+		assert.equals(800,vagon2.cargaMaxima())
+	}
+	test "El vagon2 no tiene baño"{
+		assert.notThat(vagon2.tieneBanios())
+	}
+	
+	/* TEST DEL VAGON3 */
+	test "La cantidad de pasajeros del vagon3 es 0"{
+		assert.equals(0,vagon3.cantPasajeros())
+	}
+	test "El peso maximo del vagon3 es de 6300"{
+		assert.equals(6300,vagon3.pesoMaximo())
+	}
+	test "La carga maxima del vagon3 es 4800"{
+		assert.equals(4800,vagon3.cargaMaxima())
+	}
+	test "El vagon3 no tiene baño"{
+		assert.notThat(vagon3.tieneBanios())
+	}
+	
+	/* TEST DEL VAGON4 */
+	test "La cantidad de pasajeros del vagon4 es 24"{
+		assert.equals(24,vagon4.cantPasajeros())
+	}
+	test "El peso maximo del vagon4 es de 7120"{
+		assert.equals(7120,vagon4.pesoMaximo())
+	}
+	test "La carga maxima del vagon4 es 1200"{
+		assert.equals(1200,vagon4.cargaMaxima())
+	}
+	test "El vagon4 tiene baño"{
+		assert.that(vagon4.tieneBanios())
+	}
+}
